@@ -1,5 +1,6 @@
 package com.route.e_commerce.ui.home.ourFragments.categories
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -12,11 +13,7 @@ import javax.inject.Inject
 @HiltViewModel
 class ViewModelFragment @Inject constructor(val categoryUseCase: getCategoriesInUseCase)
     :ViewModel() {
-    var categoriesLiveData=MutableLiveData<List<Category?>?>()
 
-    fun getCategories(){
-        viewModelScope.launch {
-            categoriesLiveData.postValue(categoryUseCase.invoke())
-        }
+
     }
-}
+
